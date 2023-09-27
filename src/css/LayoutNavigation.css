@@ -1,0 +1,43 @@
+/*
+   Media queries: 1200px | 1000px | 768px | 480px
+*/
+nav.layout-navigation {
+  background: #282828;
+  height: 80px;
+  padding: 0.5em 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+nav.layout-navigation h1 {
+  font-size: 1.9rem;
+  letter-spacing: 3px;
+  color: #909090;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 200;
+}
+nav.layout-navigation section {
+  display: flex;
+  justify-content: none;
+  align-items: center;
+  flex-direction: row;
+}
+nav.layout-navigation section span {
+  margin-left: 1em;
+  display: block;
+  cursor: pointer;
+  display: block;
+  height: 35px;
+  width: 35px;
+  transition: 0.5s;
+}
+nav.layout-navigation section span:hover {
+  color: rgb(109, 160, 255);
+}
+nav.layout-navigation figure {
+  cursor: pointer;
+}
+nav.layout-navigation figure, nav.layout-navigation figure img {
+  height: 100%;
+}

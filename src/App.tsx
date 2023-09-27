@@ -1,7 +1,7 @@
 import '@/css/index.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import LayoutNavigation from './components/Layout/LayoutNavigation'
-import LayoutFooter from './components/Layout/LayoutFooter'
+import LayoutNavigation from './components/Layout/LayoutNavigation/LayoutNavigation'
+import LayoutFooter from './components/Layout/LayoutFooter/LayoutFooter'
 
 
 function App() {

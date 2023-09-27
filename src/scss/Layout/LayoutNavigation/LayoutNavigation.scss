@@ -1,0 +1,39 @@
+@import '../../config';
+
+
+nav.layout-navigation {
+    background: $navAndFooterBg;
+    height: $navHeight;
+    padding: .5em 1.5em;
+    @include Flex(sb, c);
+
+    h1 {
+        font-size: 1.9rem;
+        letter-spacing: 3px;
+        color: #909090;
+        font-family: 'Roboto Mono', monospace;
+        font-weight: 200;
+    }
+
+    section {
+        @include Flex(none, c);
+
+        span {
+            margin-left: 1em;
+            display: block;
+            cursor: pointer;
+            @include Rectangle(35px);
+            transition: .5s;
+
+            &:hover {
+                color: $clr-bluel;
+            }
+        }
+    }
+
+    figure {
+        cursor: pointer;
+
+        &, img { height: 100%; }
+    }
+}

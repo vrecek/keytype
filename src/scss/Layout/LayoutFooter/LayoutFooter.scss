@@ -1,0 +1,66 @@
+@import '../../config';
+
+
+footer.layout-footer {
+    background: $navAndFooterBg;
+    padding: 3.5rem;
+
+    div.wrap {
+        @include Flex(sb);
+
+        section {
+            &.contact {
+                &,
+                div { @include Flex(c, c, c); }
+
+                
+                div {
+                    &:not(:last-child) {
+                        margin-bottom: 1.5em;
+                    }
+
+                    p {
+                        font-weight: 600;
+                        margin-bottom: .5em;
+                        font-size: .9rem;                        
+                    }   
+                    
+                    span {
+                        @include Rectangle(40px);
+                        cursor: pointer;
+                        transition: .5s;
+
+                        &:hover {
+                            color: $clr-bluel;
+                        }
+                    }
+                }
+            }
+    
+            &.informations {
+                width: 25%;
+
+                h2 {
+                    font-weight: 800;
+                    border-bottom: 2px solid #fff;
+                    margin-bottom: 1em;
+                    padding-bottom: .25em;
+                    font-size: 1.75rem;
+                    letter-spacing: 2px;
+                }
+        
+                p {
+                    color: darken(#fff, 20%);
+                    line-height: 1.75em;
+                }
+            }
+        }
+    }
+    
+    p.copyright {
+        text-align: center;
+        font-family: 'Roboto Mono', monospace;
+        font-weight: 200;
+        margin-top: 4em;
+    }
+}

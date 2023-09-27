@@ -1,15 +1,33 @@
 // font-family: 'Poppins', sans-serif;
+// 200-800
+
 // font-family: 'Roboto Mono', monospace;
+// 100-700
+
+@import './config';
+
+
+div.App,
+div#root { overflow-x: hidden; }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-size: 20px;
+    font-weight: 300;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     background: #303030;
-    color: #FFF;
+    color: #ffffff;
+    width: 100vw;
+    overflow-x: hidden;
+    min-height: 100vh;
+
+    svg {
+        pointer-events: none;
+        @include FullSize;
+    }
 }
