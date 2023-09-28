@@ -49,10 +49,10 @@ $navAndFooterBg: #282828;
    height: $size;
 }
 
-@mixin SetWidth($minPX, $curr, $maxPX) {
+@mixin SetWidth($minPX, $curr, $max) {
    width: $curr;
    min-width: #{$minPX}px;
-   max-width: #{$maxPX}px;
+   max-width: #{$max};
 }
 
 @mixin ResetWidth {

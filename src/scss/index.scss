@@ -21,10 +21,14 @@ div#root { overflow-x: hidden; }
 body {
     font-family: 'Poppins', sans-serif;
     background: #303030;
-    color: #ffffff;
+    color: $clr-whitel;
     width: 100vw;
     overflow-x: hidden;
     min-height: 100vh;
+
+    button p {
+        pointer-events: none;
+    }
 
     svg {
         pointer-events: none;

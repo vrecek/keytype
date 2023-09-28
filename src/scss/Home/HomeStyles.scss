@@ -1,0 +1,75 @@
+@import '../config';
+
+
+main.home-page {
+    // min-height: 100vh;
+    
+    header {
+        height: calc(100vh - $navHeight);
+        padding: 1em;
+        @include Flex(c, c, c);
+        position: relative;
+
+        figure {
+            position: absolute;
+            left: 0;
+            top: 0;
+            @include FullSize;
+            opacity: .075;
+            z-index: -1;
+            overflow: hidden;
+            @include Flex(c, c);
+
+            img {
+                width: 100%;
+            }
+        }
+
+        h2,
+        p:not(button > p) { 
+            @include SetWidth(480, 50%, auto);
+            text-align: center;
+        }
+    
+        p:not(button p) {
+            color: #bbb;
+            font-size: 1.1rem;
+            margin: .5em 0 2em 0;
+        }
+    
+        h2, h2 span {
+            font-size: 3.5rem;
+            font-weight: 700;
+            font-family: 'Roboto Mono', monospace;
+
+            span {
+                animation: headerBlink 1.25s 5 ease-in-out;
+            }
+
+            @keyframes headerBlink {
+                0% { opacity: 1; }
+                50% { opacity: .2; }
+                100% { opacity: 1; }
+            }
+        }
+    
+        button {
+            background: $clr-blued;
+            border: 0;
+            outline: 0;
+            border-radius: .5em;
+            cursor: pointer;
+            transition: .5s;
+    
+            p {
+                padding: 1em 1.5em;
+                color: $clr-whitel;
+                font-weight: 400;
+            }
+
+            &:hover {
+                background: darken($clr-blued, 10%);
+            }
+        }
+    }
+}
