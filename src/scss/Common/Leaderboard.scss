@@ -1,0 +1,42 @@
+@import '../config';
+
+
+section.image-text-section.short-leaderboard,
+main.leaderboard-page {
+    section.leaderboard {
+        p.header {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1.5em;
+        }
+
+        ul {
+            li {
+                @include Flex(sb);
+
+                p {
+                    padding: .5em;
+                    min-width: min-content;
+
+                    &:nth-child(1) { width: 10%; }
+                    &:nth-child(2) { width: 50%; }
+
+                    &:nth-child(3),
+                    &:nth-child(4) { 
+                        width: 20%; 
+                        text-align: right;
+                    }
+                }
+
+                &.list-description {
+                    margin-bottom: 1em;
+
+                    p {
+                        font-weight: 700;
+                        font-family: 'Roboto Mono', monospace;
+                    }
+                }
+            }
+        }
+    }
+}
