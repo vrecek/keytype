@@ -1,0 +1,79 @@
+@import '../config';
+
+
+main.game-page section.type-text-box-container {
+    @include Flex(sa, c);
+    height: calc(100vh - $navHeight);
+    position: relative;
+
+    h1 {
+        position: absolute;
+        left: calc(50% - 1rem);
+        transform: translateX(-50%);
+        top: 0;
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: darken($clr-whitel, 60%);
+    }
+
+    section {
+        text-align: center;
+
+        p.side-header {
+            font-weight: 800;
+            font-size: 2rem;
+            margin-bottom: .5em;
+        }
+
+        p:not(.side-header) {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.25rem;
+            font-weight: 400;
+        }
+    }
+
+    div.main-game-wrap {
+        width: 50%;
+
+        input[type='text'],
+        textarea {
+            border: 0;
+            outline: 0;
+            color: $clr-whitel;
+            background: none;
+            width: 100%;
+        }
+
+        div.write-to-box {
+            position: relative;
+            margin-bottom: 5em;
+
+            input[type='text'] {
+                border-bottom: 3px solid $clr-bluel;
+                padding: .75em;
+                font-size: 1.25rem;
+                font-weight: 400;
+                letter-spacing: 1px;
+            }
+
+            svg {
+                @include Rectangle(30px);
+                position: absolute;
+                right: .75em;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        textarea {
+            resize: none;
+            display: block;
+            height: 40vh;
+            line-height: 3em;
+            background: #292929;
+            border-radius: .5em;
+            padding: 2em;
+            padding-top: 1em;
+        }
+    }
+}

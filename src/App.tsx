@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import LayoutNavigation from './components/Layout/LayoutNavigation/LayoutNavigation'
 import LayoutFooter from './components/Layout/LayoutFooter/LayoutFooter'
 import Home from './components/Home/Home'
+import Game from './components/Game/Game'
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
                 <Routes>
 
                     <Route path='/' element={<Home />} />
-                    <Route path='/game' element={<>game</>} />
+                    <Route path='/game' element={<Game />} />
                     <Route path='/contact' element={<>contact</>} />
                     <Route path='*' element={<>Not found</>} />
 
