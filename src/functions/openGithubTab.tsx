@@ -1,4 +1,4 @@
-const openGithubTab = (str: string) => window.open(`https://github.com/vrecek${str}`, '_blank') 
+const openGithubTab = (str: string): Window | null => window.open(`https://github.com/vrecek${str}`, '_blank') 
 
 
 export default openGithubTab

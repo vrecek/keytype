@@ -29,31 +29,29 @@ main.game-page section.type-text-box-container {
             font-family: 'Roboto Mono', monospace;
             font-size: 1.25rem;
             font-weight: 400;
+            transition: .5s;
         }
     }
 
     div.main-game-wrap {
         width: 50%;
 
-        input[type='text'],
-        textarea {
-            border: 0;
-            outline: 0;
-            color: $clr-whitel;
-            background: none;
-            width: 100%;
-        }
-
         div.write-to-box {
             position: relative;
             margin-bottom: 5em;
+            border-bottom: 3px solid $clr-bluel;
 
             input[type='text'] {
-                border-bottom: 3px solid $clr-bluel;
                 padding: .75em;
+                position: relative;
                 font-size: 1.25rem;
-                font-weight: 400;
                 letter-spacing: 1px;
+                font-weight: 400;
+                border: 0;
+                outline: 0;
+                color: $clr-whitel;
+                background: none;
+                width: 100%;
             }
 
             svg {
@@ -65,10 +63,11 @@ main.game-page section.type-text-box-container {
             }
         }
 
-        textarea {
-            resize: none;
+        div.textbox {
             display: block;
+            pointer-events: none;
             height: 40vh;
+            font-weight: 400;
             line-height: 3em;
             background: #292929;
             border-radius: .5em;
