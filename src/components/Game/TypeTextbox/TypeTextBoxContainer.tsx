@@ -11,17 +11,19 @@ import { GameContextType } from "@/interfaces/Game/GameTypes"
 const TypeTextBoxContainer = () => {
     const { gameState } = React.useContext(GameContext) as GameContextType
     
+
     return (
         <section className="type-text-box-container">
 
             { !gameState.hasStarted && <h1>Start typing to start</h1> }
+            { gameState.hasFinished && <h1>Game finished</h1> }
 
-            <GuessedWords />
+            <GuessedWords guessedWords={ gameState.guessedWords } />
 
             <div className="main-game-wrap">
 
                 <WriteToBox />
-                <TextBox />
+                <TextBox text={ gameState.text } />
 
             </div>
 

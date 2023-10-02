@@ -1,7 +1,7 @@
 import React from "react"
 import ParagraphHeader from "./ParagraphHeader"
 import { GameContext } from "../Game"
-import { GameContextType } from "@/interfaces/Game/GameTypes"
+import { GameContextType, GameValuesType } from "@/interfaces/Game/GameTypes"
 import { getGameTime, incrementGameTime, initGameTime } from "@/functions/gameTime"
 
 
@@ -17,7 +17,6 @@ const Timer = () => {
         if (gameState.hasStarted && !gameState.hasFinished) {
 
             // Starts the game's timer
-
             initGameTime()
 
             // Set the interval as a state, just to stop it easily after the game ends
@@ -42,8 +41,8 @@ const Timer = () => {
             // Stop the timer
             clearInterval(timeInterval)
 
-            // Mark the final results
-            timeParagraph.style.color = 'rgb(21, 160, 67)'
+            // Mark the final time
+            timeParagraph.style.color = 'rgb(13, 217, 71)'
         }
 
     }, [gameState.hasStarted, gameState.hasFinished])

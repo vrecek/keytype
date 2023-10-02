@@ -1,7 +1,7 @@
 import '@/css/GameStyles.css'
 import TypeTextBoxContainer from './TypeTextbox/TypeTextBoxContainer'
 import React from 'react'
-import { GameContextType, GameValuesType } from '@/interfaces/Game/GameTypes'
+import { GameContextType, GameValuesType, initGameObject } from '@/interfaces/Game/GameTypes'
 import GameSummary from './GameSummary/GameSummary'
 import Scroll from 'react-scroll'
 
@@ -9,8 +9,9 @@ import Scroll from 'react-scroll'
 const GameContext = React.createContext<GameContextType | null>(null)
 
 const Game = () => {
-    const [gameState, setGameState] = React.useState<GameValuesType>({ hasFinished: false, hasStarted: false })
+    const [gameState, setGameState] = React.useState<GameValuesType>(initGameObject)
 
+    
     React.useEffect(() => {
 
         // If the game has been finished, scroll to the results
@@ -33,8 +34,9 @@ const Game = () => {
                 <TypeTextBoxContainer />
 
                 {
-                    gameState.hasFinished
-                        && <GameSummary />
+                    // gameState.hasFinished
+                        // && <GameSummary />
+                         <GameSummary />
                 }
 
             </GameContext.Provider>

@@ -1,4 +1,24 @@
+@import '../config';
+
+
 section.game-summary {
-    height: 200vh;
-    background: #252525;
+    background: #292929;
+    padding: 2em;
+    border-radius: .25em;
+
+    h2 {
+        font-weight: 500;
+        font-size: 1.75rem;
+        text-align: center;
+        opacity: .35;
+    }
+
+    h3 {
+        text-align: center;
+        margin-top: .5em;
+        font-size: 1rem;
+        opacity: .75;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
 }
