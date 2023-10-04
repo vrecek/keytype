@@ -8,7 +8,7 @@ const LayoutNavigation = () => {
         <nav className="layout-navigation">
 
             <Logo />
-            <h1>KEYTYPE</h1>
+            <p className="header-name">KEYTYPE</p>
             <ContactIcons />
 
         </nav>

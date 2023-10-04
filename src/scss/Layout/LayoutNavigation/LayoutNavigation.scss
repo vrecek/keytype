@@ -21,7 +21,7 @@ nav.layout-navigation {
         }
     }
 
-    h1 {
+    p.header-name {
         font-size: 1.9rem;
         letter-spacing: 3px;
         color: #909090;
@@ -33,11 +33,14 @@ nav.layout-navigation {
         @include Flex(none, c);
 
         span {
-            margin-left: 1em;
             display: block;
             cursor: pointer;
             @include Rectangle(35px);
             transition: .5s;
+
+            &:last-child {
+                margin-left: 1em;
+            }
 
             &:hover {
                 color: $clr-bluel;
@@ -49,5 +52,11 @@ nav.layout-navigation {
         cursor: pointer;
 
         &, img { height: 100%; }
+    }
+
+    @media (max-width: 480px) {
+        p.header-name {
+            display: none;
+        }
     }
 }

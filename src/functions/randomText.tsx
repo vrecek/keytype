@@ -2,6 +2,7 @@ import texts from '@/data/possibleTexts.json'
 
 
 const generateRandomText = (): string => {
+    return 'Lorem ipsum'
     if (!Array.isArray(texts))
         return 'Error'
 

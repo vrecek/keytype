@@ -59,4 +59,30 @@ section.image-text-section {
             }
         }
     }
+
+    @media (max-width: 1000px) {
+        flex-direction: column;
+        padding: 3em 2em;
+
+        &.short-leaderboard {
+            flex-direction: column;
+
+            section.leaderboard {
+                width: 100%;
+                margin-bottom: 4em;
+            }
+        }
+
+        section.text-section {
+            width: 100%;
+        }
+
+        figure {
+            display: none;
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding: 3em 1em;
+    }
 }

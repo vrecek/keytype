@@ -3,13 +3,14 @@
 
 main.game-page section.type-text-box-container {
     @include Flex(sa, c);
-    height: calc(100vh - $navHeight);
+    min-height: calc(100vh - $navHeight);
     position: relative;
 
     h1 {
         position: absolute;
         left: calc(50% - 1rem);
         transform: translateX(-50%);
+        text-align: center;
         top: 0;
         font-size: 1.5rem;
         font-weight: 400;
@@ -66,8 +67,8 @@ main.game-page section.type-text-box-container {
         div.textbox {
             display: block;
             height: 40vh;
-            user-select: none;
             overflow: scroll;
+            pointer-events: none;
             font-weight: 400;
             line-height: 3em;
             background: #292929;
@@ -79,6 +80,30 @@ main.game-page section.type-text-box-container {
                 color: $clr-greenlr;
                 font-weight: inherit;
             }
+        }
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+
+        div.main-game-wrap {
+            width: 100%;
+
+            div.write-to-box,
+            div.textbox {
+                margin-bottom: 2em;
+            }
+        }
+
+
+        h1 {
+            position: static;
+            left: 0;
+            text-align: center;
+            transform: translateX(0);
+            margin-bottom: 2em;
+            left: 50%;
+            width: 100%;
         }
     }
 }

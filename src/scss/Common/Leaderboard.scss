@@ -47,8 +47,8 @@ main.leaderboard-page {
 
     section.leaderboard {
         p.header {
-            font-size: 2rem;
             text-align: center;
+            @include Clamp(1.5, 6, 2);
             margin-bottom: 1.5em;
         }
 
@@ -57,7 +57,7 @@ main.leaderboard-page {
                 @include Flex(sb);
 
                 p {
-                    padding: .5em;
+                    padding: .5em .25em;
                     min-width: min-content;
 
                     &:nth-child(1) {
