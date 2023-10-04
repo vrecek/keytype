@@ -7,6 +7,7 @@ import Game from './components/Game/Game'
 import ArrowScroll from './components/Layout/ArrowScroll'
 import React from 'react'
 import Leaderboards from './components/Leaderboards/Leaderboards'
+import Error from './components/Error/Error'
 
 
 function App() {
@@ -47,7 +48,7 @@ function App() {
                     <Route path='/' element={<Home />} />
                     <Route path='/game' element={<Game />} />
                     <Route path='/leaderboards' element={<Leaderboards />} />
-                    <Route path='*' element={<>Not found</>} />
+                    <Route path='*' element={<Error />} />
 
                 </Routes>
 
