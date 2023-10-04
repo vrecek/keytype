@@ -6,6 +6,7 @@ const LeaderboardListDesc = () => {
             <p>Username</p>
             <p>Words</p>
             <p>Time</p>
+            <p>WPM</p>
 
         </li>
     )

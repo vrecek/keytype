@@ -1,11 +1,16 @@
-const LeaderboardElement = () => {
+import secondsToStringTime from "@/functions/secondsToStringTime"
+import { RecordElement } from "@/interfaces/Leaderboards/LeaderboardsTypes"
+
+
+const LeaderboardElement = ({ nr, username, words, time, wpm }: RecordElement) => {
     return (
         <li>
 
-            <p>1.</p>
-            <p>vreasddsacek</p>
-            <p>134</p>
-            <p>01:32</p>
+            <p>{ nr }.</p>
+            <p>{ username }</p>
+            <p>{ words }</p>
+            <p>{ secondsToStringTime(time) }</p>
+            <p>{ wpm }</p>
 
         </li>
     )

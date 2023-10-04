@@ -2,8 +2,6 @@ import texts from '@/data/possibleTexts.json'
 
 
 const generateRandomText = (): string => {
-    return 'Lorem ipsum dolor sit amet a'
-    
     if (!Array.isArray(texts))
         return 'Error'
 
@@ -11,6 +9,4 @@ const generateRandomText = (): string => {
 }
 
 
-export {
-    generateRandomText
-}
+export { generateRandomText }

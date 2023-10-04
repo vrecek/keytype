@@ -9,8 +9,9 @@ import Scroll from 'react-scroll'
 const GameContext = React.createContext<GameContextType | null>(null)
 
 const Game = () => {
-    const [gameState, setGameState] = React.useState<GameValuesType>(initGameObject)
+    const [gameState, setGameState] = React.useState<GameValuesType>({...initGameObject})
 
+    React.useEffect(() => window.scrollTo(0, 0), [])
     
     React.useEffect(() => {
 
@@ -18,7 +19,7 @@ const Game = () => {
         if (gameState.hasFinished) {
             Scroll.scroller.scrollTo('game-summary', {
                 smooth: true,
-                offset: -20,
+                offset: -200,
                 duration: 500
             })
         }
@@ -34,9 +35,8 @@ const Game = () => {
                 <TypeTextBoxContainer />
 
                 {
-                    // gameState.hasFinished
-                        // && <GameSummary />
-                         <GameSummary />
+                    gameState.hasFinished
+                        && <GameSummary />
                 }
 
             </GameContext.Provider>

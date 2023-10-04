@@ -1,12 +1,13 @@
 import React from "react"
 import ParagraphHeader from "./ParagraphHeader"
 import { GameContext } from "../Game"
-import { GameContextType, GameValuesType } from "@/interfaces/Game/GameTypes"
+import { GameContextType } from "@/interfaces/Game/GameTypes"
 import { getGameTime, incrementGameTime, initGameTime } from "@/functions/gameTime"
+import secondsToStringTime from "@/functions/secondsToStringTime"
 
 
 const Timer = () => {
-    const { gameState, switchGameState } = React.useContext(GameContext) as GameContextType
+    const { gameState } = React.useContext(GameContext) as GameContextType
     const [timeInterval, setTimeInterval] = React.useState<any | null>(null)
     const timerRef = React.useRef<HTMLParagraphElement>(null)
 
@@ -23,15 +24,8 @@ const Timer = () => {
             setTimeInterval(setInterval(() => {
                 incrementGameTime()
 
-                const currentTime: number = getGameTime()
-
-                // Calculate the current time
-                const m: number = Math.floor(currentTime / 60),
-                      s: number = currentTime % 60
-
-
-                // Display actual time on the paragraph
-                timeParagraph.textContent = `0${m}`.slice(-2) + ":" +`0${s}`.slice(-2)
+                // Calculate the current time & Display actual time on the paragraph
+                timeParagraph.textContent = secondsToStringTime(getGameTime())
             }, 1000))
         }
 
@@ -52,7 +46,7 @@ const Timer = () => {
         <section className="timer">
 
             <ParagraphHeader>Timer</ParagraphHeader>
-            <p onClick={() => switchGameState(curr => { curr.hasFinished = true;return {...curr}})} ref={ timerRef }>00:00</p>
+            <p ref={ timerRef }>00:00</p>
 
         </section>
     )

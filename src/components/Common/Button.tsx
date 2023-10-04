@@ -1,9 +1,9 @@
 import ButtonOptions from "@/interfaces/Common/ButtonTypes"
 
 
-const Button = ({ children, clickFn }: ButtonOptions) => {
+const Button = ({ children, cname, clickFn }: ButtonOptions) => {
     return (
-        <button onClick={ clickFn }>
+        <button className={ cname } onClick={ clickFn }>
 
             <p>{ children }</p>
 

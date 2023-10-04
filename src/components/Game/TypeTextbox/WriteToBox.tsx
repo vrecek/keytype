@@ -9,7 +9,8 @@ const WriteToBox = () => {
     const { gameState, switchGameState } = React.useContext(GameContext) as GameContextType
     const inputRef = React.useRef<HTMLInputElement>(null)
     const [textObject, setTextObject] = React.useState<WordsHandleType>({
-        actualWords: gameState.text.split(' '),
+        // actualWords: gameState.text.split(/(\s+)/), // Including spaces
+        actualWords: gameState.text.split(' '), // Excluding spaces
         currentIndex: 0
     })
 
@@ -37,20 +38,20 @@ const WriteToBox = () => {
         }
 
         const input = e.target! as HTMLInputElement,
-              word: string = input.value
+              word: string = input.value + e.key
 
-
+              
         // If the word is spelled correctly
         if (word === textObject.actualWords[0]) {
             const newSpan: Element = document.createElement('span'),
-                  textContainer: HTMLElement = input.parentElement!.parentElement!.children[1] as HTMLElement,
-                  currentSpan: HTMLElement = textContainer.children[0] as HTMLElement
+                textContainer: HTMLElement = input.parentElement!.parentElement!.children[1] as HTMLElement,
+                currentSpan: HTMLElement = textContainer.children[0] as HTMLElement
 
-                  
+
             // Scroll the box if the text is slowly being not visible
             if (currentSpan.offsetHeight > (textContainer.clientHeight - 100) + textContainer.scrollTop)
                 textContainer.scrollTop += 100
-            
+
 
             // Get the word's index
             const location = gameState.text.indexOf(word, textObject.currentIndex)
@@ -63,7 +64,6 @@ const WriteToBox = () => {
             newSpan.textContent = `${currentSpan.textContent} ${word} `
             textContainer.prepend(newSpan)
 
-            input.value = ''
 
             // Update the array of words, and the total guessed words, as well as the current index
             setTextObject((curr: WordsHandleType) => {
@@ -78,15 +78,20 @@ const WriteToBox = () => {
                 return { ...state }
             })
 
-            // If the user typed every word (game finished) 
-            if (!(textObject.actualWords.length - 1)) {
-                switchGameState((state: GameValuesType) => {
-                    state.time = getGameTime()
-                    state.hasFinished = true
+            setTimeout(() => {
+                input.value = ''
 
-                    return { ...state }
-                })
-            }
+                // If the user typed every word (game finished) 
+                if ( !(textObject.actualWords.length) ) {
+                    switchGameState((state: GameValuesType) => {
+                        state.time = getGameTime()
+                        state.hasFinished = true
+
+                        return { ...state }
+                    })
+                }
+
+            }, 5)
         }
     }
 
@@ -98,7 +103,7 @@ const WriteToBox = () => {
                 ref={inputRef}
                 type='text'
                 spellCheck='false'
-                onKeyUp={ keyHandler }
+                onKeyDown={ keyHandler }
             />
 
             <BiPencil />

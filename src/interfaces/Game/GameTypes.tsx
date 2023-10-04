@@ -26,7 +26,6 @@ export type WordsHandleType = {
     currentIndex: number
 }
 
-
 export const initGameObject: GameValuesType = {
     hasStarted: false,
     hasFinished: false,

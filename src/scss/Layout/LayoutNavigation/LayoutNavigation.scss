@@ -6,6 +6,20 @@ nav.layout-navigation {
     height: $navHeight;
     padding: .5em 1.5em;
     @include Flex(sb, c);
+    width: 100%;
+    z-index: 2;
+
+    &.visible {
+        position: fixed;
+        left: 0;
+        top: 0;
+        animation: nav-scroll .5s;
+
+        @keyframes nav-scroll {
+            0% { top: -100% }
+            100% { top: 0 }
+        }
+    }
 
     h1 {
         font-size: 1.9rem;
