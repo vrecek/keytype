@@ -20,7 +20,7 @@ const WhatIsThisAbout = () => {
 
             <IntroductionTextSection 
                 header='What exactly is this all about?'
-                text='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni non, aspernatur sapiente ducimus dolorum quam quis ipsum laboriosam pariatur!'
+                text='Have you ever wondered how fast would you type on a keyboard? Here, on this website, you can test it by yourself.'
                 btnText="Let's get started"
                 btnClickFn={ () => redirectToGame(n) }
             />

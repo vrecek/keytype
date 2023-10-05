@@ -19,7 +19,7 @@ const Header = () => {
             />
 
             <HeaderText />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quia veniam alias magni necessitatibus.</p>
+            <p>Check how many Words Per Minute you can achieve, by playing on this official website's typing test</p>
             <Button clickFn={() => redirectToGame(n)}>
                 Get started
             </Button>

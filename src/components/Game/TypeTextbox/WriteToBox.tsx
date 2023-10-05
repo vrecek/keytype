@@ -26,7 +26,7 @@ const WriteToBox = () => {
     }, [gameState.hasFinished])
 
 
-    const keyHandler = (e: React.KeyboardEvent): void => {
+    const keyHandler = (e: React.ChangeEvent): void => {
 
         // Start the game if the input is touched for the first time
         if (!gameState.hasStarted) {
@@ -38,7 +38,7 @@ const WriteToBox = () => {
         }
 
         const input = e.target! as HTMLInputElement,
-              word: string = input.value + e.key
+              word: string = input.value
 
               
         // If the word is spelled correctly
@@ -103,7 +103,7 @@ const WriteToBox = () => {
                 ref={inputRef}
                 type='text'
                 spellCheck='false'
-                onKeyDown={ keyHandler }
+                onChange={ keyHandler }
             />
 
             <BiPencil />

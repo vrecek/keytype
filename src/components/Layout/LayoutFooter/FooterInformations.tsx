@@ -3,7 +3,7 @@ const FooterInformations = () => {
         <section className="informations">
 
             <p className="header-name">KEYTYPE</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum maxime nemo ad asperiores unde eligendi dicta!</p>
+            <p>Check how many Words Per Minute you can achieve, by playing on this official website's typing test. Keep improving!</p>
 
         </section>
     )

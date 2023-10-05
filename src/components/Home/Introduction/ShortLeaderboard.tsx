@@ -17,7 +17,7 @@ const ShortLeaderboard = () => {
 
 			<IntroductionTextSection
 				header='Get your best results saved on the leaderboard'
-				text='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni non, aspernatur sapiente ducimus dolorum quam quis ipsum laboriosam pariatur!'
+				text='Keep the track of your progress via the leaderboard. Save your best scores, and keep improving your typing skill.'
 				btnText="View the leaderboard"
                 btnClickFn={ redirectToLeaderboards }
 			/>
